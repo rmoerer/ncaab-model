@@ -19,7 +19,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          Rscript -e 'install.packages(c("dplyr", "readr", "tibble", "tidyr"))'
+          Rscript -e 'install.packages(c("dplyr", "readr", "tibble", "tidyr", "lubridate"))'
 
       - name: Run update script
         run: Rscript main.R
