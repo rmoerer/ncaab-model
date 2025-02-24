@@ -1,1 +1,28 @@
-season,game_id,date,location,type,conf,away_pts,home_pts,away,home,away_regress,home_regress,away_rest,home_rest,mov,rest_adv
+date,home,away,pred
+2025-02-24,Texas Tech,Houston,-1.432862835424789
+2025-02-24,Nebraska,Michigan,0.2903083923399201
+2025-02-24,Florida St.,North Carolina,-1.9203689032901643
+2025-02-24,Colorado,Kansas,-5.341076096388335
+2025-02-24,William & Mary,UNC Wilmington,-3.78024743408017
+2025-02-24,Monmouth,Northeastern,1.7600463204026875
+2025-02-24,Nicholls St.,Texas A&M Corpus Chris,2.183461918400999
+2025-02-24,Incarnate Word,Lamar,0.5852123618501919
+2025-02-24,Jacksonville,Eastern Kentucky,0.5509769879522706
+2025-02-24,Austin Peay,Lipscomb,-9.07970569309743
+2025-02-24,Alabama St.,Bethune Cookman,2.0327417575479956
+2025-02-24,Alabama A&M,Florida A&M,-2.4996285479973652
+2025-02-24,Houston Christian,Stephen F. Austin,-2.4178274108485542
+2025-02-24,McNeese St.,UT Rio Grande Valley,14.928025338314946
+2025-02-24,Southeastern Louisiana,Northwestern St.,9.034208057725401
+2025-02-24,Florida Gulf Coast,North Florida,8.491539005420105
+2025-02-24,West Georgia,Queens,-6.934173448145563
+2025-02-24,Delaware St.,North Carolina Central,5.578385757754766
+2025-02-24,New Orleans,Texas A&M Commerce,0.5145917915755862
+2025-02-24,Stetson,Bellarmine,1.3547651608818574
+2025-02-24,Central Arkansas,North Alabama,-10.625971954653178
+2025-02-24,Norfolk St.,Morgan St.,15.524689528119303
+2025-02-24,Hampton,Stony Brook,7.473455525320503
+2025-02-24,Maryland Eastern Shore,South Carolina St.,-12.744495691133556
+2025-02-24,Coppin St.,Howard,-6.056119129040864
+2025-02-24,Texas Southern,Arkansas Pine Bluff,15.138427722445376
+2025-02-24,Prairie View A&M,Mississippi Valley St.,18.434271670484065

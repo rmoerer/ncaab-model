@@ -83,7 +83,10 @@ if (nrow(todays_games) > 0) {
   todays_games$pred <- predict(ema, newdata = todays_games)
 }
 
-write_csv(todays_games, todays_predictions_path)
+write_csv(
+  todays_games |> select(any_of(c("date", "home", "away", "pred"))),
+  todays_predictions_path
+)
 
 # save out current ratings
 curr_season_teams <- unique(c(
