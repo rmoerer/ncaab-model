@@ -40,6 +40,7 @@ get_super_sked <- function(seasons, sleep = 5) {
 
 prep_games <- function(games_raw) {
   games <- games_raw |> 
+    dplyr::filter(type != "nond1") |> 
     dplyr::select(season, game_id, date, location, type, conf,
                   away = team1, home = team2, away_pts = team1_pts, home_pts = team2_pts) |> 
     dplyr::mutate(game_id = glue::glue("{season}_{game_id}")) |> 
