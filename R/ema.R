@@ -14,6 +14,7 @@ new_ema <- function(
     hfa = hfa,
     regress = regress,
     loss_function = loss_function,
+    ratings_history = data.frame(),
     res = numeric(),
     preds = numeric(),
     loss = 0
@@ -39,7 +40,9 @@ predict_ema <- function(object, home, away, location) {
 update_ema <- function(object, data) {
   res <- numeric(nrow(data))
   preds <- numeric(nrow(data))
-  for (i in 1:nrow(data)) {
+  home_ratings <- numeric(nrow(data))
+  away_ratings <- numeric(nrow(data))
+  for (i in seq_len(nrow(data))) {
     home <- data$home[i]
     away <- data$away[i]
     location <- data$location[i]
@@ -64,8 +67,14 @@ update_ema <- function(object, data) {
       object$ratings[home] <- object$ratings[home] + object$outconf_k * (mov - pred)
       object$ratings[away] <- object$ratings[away] + object$outconf_k * (pred - mov)
     }
+    home_ratings[i] <- object$ratings[home]
+    away_ratings[i] <- object$ratings[away]
   }
   object$res <- c(object$res, res)
   object$preds <- c(object$preds, preds)
+  object$ratings_history <- rbind(
+    object$ratings_history,
+    data.frame(home_rating = home_ratings, away_rating = away_ratings)
+  )
   return(object)
 }
