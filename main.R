@@ -71,7 +71,7 @@ ema <- update_ema(ema, completed_games)
 # add predictions and errors to completed games data
 completed_games$pred <- ema$preds
 completed_games$error <- ema$res
-completed_games <- bind_cols(ema$ratings_history)
+completed_games <- bind_cols(completed_games, ema$ratings_history)
 
 # save completed_games
 write_csv(completed_games, completed_games_path)
