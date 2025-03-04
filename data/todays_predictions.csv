@@ -1,6 +1,7 @@
 date,home,away,pred
 2025-03-03,Northwestern,UCLA,-0.16360449327863158
 2025-03-03,Houston,Kansas,11.436131418347372
+<<<<<<< HEAD
 2025-03-03,Duke,Wake Forest,23.753932386373997
 2025-03-03,UT Rio Grande Valley,Southeastern Louisiana,0.06088895136657335
 2025-03-03,Lamar,Nicholls St.,2.0803358416772335
@@ -24,5 +25,30 @@ date,home,away,pred
 2025-03-03,Coppin St.,Maryland Eastern Shore,1.7896701161505106
 2025-03-03,Texas A&M Corpus Chris,New Orleans,17.93423196444341
 2025-03-03,Lipscomb,Central Arkansas,20.764411236292467
+=======
+2025-03-03,Duke,Wake Forest,22.821866048995233
+2025-03-03,UT Rio Grande Valley,Southeastern Louisiana,-0.03377981291995802
+2025-03-03,Lamar,Nicholls St.,1.0803664031615847
+2025-03-03,Jacksonville,Eastern Kentucky,0.8984459651500205
+2025-03-03,Morgan St.,Delaware St.,-1.3497072402646868
+2025-03-03,Florida Gulf Coast,Queens,5.989877052165916
+2025-03-03,Florida A&M,Southern,-3.4134287666867174
+2025-03-03,Weber St.,Northern Colorado,-5.02579640681545
+2025-03-03,North Texas,Wichita St.,9.242887146779406
+2025-03-03,North Carolina Central,Norfolk St.,-6.088431578553241
+2025-03-03,Northwestern St.,Incarnate Word,3.1069269275356737
+2025-03-03,Montana St.,Idaho,6.804892297110434
+2025-03-03,Alcorn St.,Texas Southern,2.553056090463869
+2025-03-03,Stephen F. Austin,McNeese St.,-9.77632001089813
+2025-03-03,Texas A&M Commerce,Houston Christian,-0.4742973873436007
+2025-03-03,Idaho St.,Northern Arizona,7.025355936485964
+2025-03-03,Montana,Eastern Washington,9.406453567257085
+2025-03-03,South Carolina St.,Howard,10.633472075037686
+2025-03-03,North Alabama,Austin Peay,11.086467859769641
+2025-03-03,Bethune Cookman,Grambling St.,6.168223541481993
+2025-03-03,Texas A&M Corpus Chris,New Orleans,16.415500345824803
+2025-03-03,Coppin St.,Maryland Eastern Shore,3.2805691915461566
+2025-03-03,Lipscomb,Central Arkansas,21.043082641660803
+>>>>>>> df3b8ee55bf5526598858873bce9afc211bcf87d
 2025-03-03,Jackson St.,Prairie View A&M,13.226935352851669
 2025-03-03,Portland St.,Sacramento St.,14.076197541010545
