@@ -3,6 +3,7 @@ new_ema <- function(
     init_ratings,
     inconf_k,
     outconf_k,
+    post_k,
     hfa = 0,
     regress = 1,
     loss_function = \(mov, pred) (mov - pred)^2
@@ -11,6 +12,7 @@ new_ema <- function(
     ratings = init_ratings,
     inconf_k = inconf_k,
     outconf_k = outconf_k,
+    post_k = post_k,
     hfa = hfa,
     regress = regress,
     loss_function = loss_function,
@@ -49,7 +51,7 @@ update_ema <- function(object, data) {
     away_regress <- data$away_regress[i]
     home_regress <- data$home_regress[i]
     mov <- data$mov[i]
-    conf <- data$conf[i]
+    type <- data$type[i]
     if (away_regress == 1L) {
       object$ratings[away] <- (object$ratings[away] ) * object$regress + 0
     }
@@ -60,12 +62,15 @@ update_ema <- function(object, data) {
     preds[i] <- pred
     res[i] <- mov - pred
     object$loss <- object$loss + object$loss_function(mov, pred)
-    if (conf) {
+    if (type %in% c("conf", "conf_t")) {
       object$ratings[home] <- object$ratings[home] + object$inconf_k * (mov - pred)
       object$ratings[away] <- object$ratings[away] + object$inconf_k * (pred - mov)
-    } else {
+    } else if (type == "nc") {
       object$ratings[home] <- object$ratings[home] + object$outconf_k * (mov - pred)
       object$ratings[away] <- object$ratings[away] + object$outconf_k * (pred - mov)
+    } else {
+      object$ratings[home] <- object$ratings[home] + object$post_k * (mov - pred)
+      object$ratings[away] <- object$ratings[away] + object$post_k * (pred - mov)
     }
     home_ratings[i] <- object$ratings[home]
     away_ratings[i] <- object$ratings[away]

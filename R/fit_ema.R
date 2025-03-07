@@ -1,5 +1,6 @@
 source("R/ema.R")
 library(dplyr)
+library(readr)
 
 # create training and test data
 games <- read_csv(here::here("data/completed_games.csv"))
@@ -36,9 +37,10 @@ ignore_indices <- 1:(games |> filter(season < 2013) |> nrow())
 opt_loss_fn <- function(params) {
   inconf_k_param <- params[1]
   outconf_k_param <- params[2]
-  hfa_param <- params[3]
-  regress_param <- params[4]
-  new_team_rating_param <- params[5]
+  post_k_param <- params[3]
+  hfa_param <- params[4]
+  regress_param <- params[5]
+  new_team_rating_param <- params[6]
   
   new_ratings[] <- new_team_rating_param
   
@@ -46,6 +48,7 @@ opt_loss_fn <- function(params) {
     c(orig_ratings, new_ratings),
     inconf_k_param,
     outconf_k_param,
+    post_k_param,
     hfa_param,
     regress = regress_param,
     loss_function = loss_function
@@ -55,13 +58,13 @@ opt_loss_fn <- function(params) {
 }
 
 # actual optimization
-params <- c(0.10, 0.10, 3, 0.8, -1)
+params <- c(0.10, 0.10, 0.10, 3, 0.8, -1)
 opt <- optim(
   params,
   opt_loss_fn,
   method = "L-BFGS-B",
-  lower = c(0, 0, 0, 0, -Inf),
-  upper = c(1, 1, Inf, 1, 0)
+  lower = c(0, 0, 0, 0, 0, -Inf),
+  upper = c(1, 1, 1, Inf, 1, 0)
 )
 
 
@@ -70,9 +73,10 @@ saveRDS(
   list(
     inconf_k = opt$par[1],
     outconf_k = opt$par[2],
-    hfa = opt$par[3],
-    regress = opt$par[4],
-    new_team_rating = opt$par[5]
+    post_k = opt$par[3],
+    hfa = opt$par[4],
+    regress = opt$par[5],
+    new_team_rating = opt$par[6]
   ),
   "model_files/model_params.rds"
 )

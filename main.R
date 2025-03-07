@@ -58,6 +58,7 @@ ema <- new_ema(
   init_ratings = c(orig_ratings, new_ratings),
   inconf_k = ema_params$inconf_k,
   outconf_k = ema_params$outconf_k,
+  post_k = ema_params$post_k,
   hfa = ema_params$hfa,
   regress = ema_params$regress
 )
