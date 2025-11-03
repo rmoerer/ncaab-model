@@ -4,7 +4,7 @@ source("R/torvik.R")
 source("R/ema.R")
 
 min_season <- 2008
-curr_season <- 2025
+curr_season <- 2026
 todays_date <- Sys.Date()
 games_raw_path <- "data/games_raw.csv"
 completed_games_path <- "data/completed_games.csv"
